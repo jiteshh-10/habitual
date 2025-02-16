@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class MyAlertBox extends StatelessWidget {
+  // ignore: prefer_typing_uninitialized_variables
   final controller;
   final String hintText;
   final VoidCallback onSave;
@@ -33,19 +34,19 @@ class MyAlertBox extends StatelessWidget {
       actions: [
         MaterialButton(
           onPressed: onSave,
-          child: Text(
+          color: Colors.black,
+          child: const Text(
             "Save",
             style: TextStyle(color: Colors.white),
           ),
-          color: Colors.black,
         ),
         MaterialButton(
           onPressed: onCancel,
-          child: Text(
+          color: Colors.black,
+          child: const Text(
             "Cancel",
             style: TextStyle(color: Colors.white),
           ),
-          color: Colors.black,
         ),
       ],
     );

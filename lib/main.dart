@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:habitual/pages/home_page.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
-void main(){
+void main() async {
+  // initialize hive
+  await Hive.initFlutter();
+
+  //open a box
+  await Hive.openBox("Habit_Database");
+
   runApp(const MyApp());
 }
 
@@ -12,7 +19,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: const HomePage(),
-      theme: ThemeData(primarySwatch : Colors.green) ,
+      theme: ThemeData(primarySwatch: Colors.green),
     );
   }
 }
